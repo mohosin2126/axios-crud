@@ -28,7 +28,7 @@ const url = "url";
                     })
 
    ```
-   
+
 ## Update The Data using axios
 ```js
 
@@ -45,3 +45,40 @@ const url = "url";
     }                 
 
 ```
+
+### Delete
+
+```js
+const [services,setServices]=useState([])
+
+const handleDelete = _id => {
+    
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        })
+        .then((result) => {
+            if (result.isConfirmed){
+               axios.delete(`http://localhost:5050/user/${userr._id}`)
+.then(res=>res.json())
+.then(data=>{
+    if(data.deletedCount>0){
+        Swal.fire(
+            'Deleted!',
+            'Your Service has been deleted.',
+            'success'
+        )
+        const remaining =services.filter(ser=> ser._id !== _id)
+        setServices(remaining)
+    }
+})
+
+            }
+        
+        })
+
