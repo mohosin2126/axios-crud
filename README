@@ -1,8 +1,8 @@
 ## AXIOS
-
 ### Load Data Using Axios
 
 ```js
+
 const [bookings, setBookings] = useState([]);
 
 const url = "url";
@@ -14,7 +14,6 @@ const url = "url";
     }, [url]);
 
 ```
-
 
 ### Post Data Using Axios
 
@@ -30,6 +29,7 @@ const url = "url";
                     })
 
    ```
+
 
 ## Update The Data using axios
 
@@ -87,4 +87,3 @@ const handleDelete = _id => {
         })
 
 
-```
