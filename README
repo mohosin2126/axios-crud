@@ -1,6 +1,6 @@
 ## AXIOS
 
-### Load Data Using Axios
+ ### Load Data Using Axios
 
 ```js
 const [bookings, setBookings] = useState([]);
@@ -14,5 +14,20 @@ const url = "url";
     }, [url]);
 
 ```
+### Post Data Using Axios
+
+  ```js
+  const user = { email };
+  axios.post('url', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.success) {
+                           console.log("Data Posted")
+                        }
+                    })
+
+   ```
+
+
 
 
